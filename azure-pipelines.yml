@@ -116,9 +116,8 @@ stages:
                 export PGPASSWORD=$DB_PASSWORD
                 dbUser=$dbUser
                 dbName=$dbName
-                stagePath=$stagePath
 
-                cd $stagePath/deploy-temp
+                cd $(stagePath)/deploy-temp
 
                 echo "Dropping database if exists..."
                 psql -U "$dbUser" -d postgres -c "DROP DATABASE IF EXISTS $dbName;"
